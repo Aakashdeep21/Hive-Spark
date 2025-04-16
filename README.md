@@ -60,4 +60,34 @@
 
 ```sql
 create database hive_spark;
- ``` 
+ ```
+
+<p>"Now, we will create two Hive tables. The column structure of each table will mirror that of our source file."</p>
+
+<p>Hive DDL (Data Definition Language) command to create a <code data-start="82" data-end="92">customers</code> table.</p>
+```sql
+create table hive_spark.customers(
+customer_id string,
+customer_unique_id string,
+customer_zip_code_prefix string,
+customer_city string,
+customer_state string)
+row format delimited
+fields terminated by ','
+tblproperties('skip.header.line.count'='1');
+```
+<p>Hive DDL (Data Definition Language) command to create a <span style="font-family: monospace;"><span style="background-color: #bfe6ff;">orders </span></span>table.</p>
+```sql
+create table hive_spark.orders(
+order_id string,
+customer_id string,
+order_status string,
+order_purchase_timestamp timestamp,
+order_approved_at timestamp,
+order_delivered_carrier_date timestamp,
+order_delivered_customer_date timestamp,
+order_estimated_delivery_date timestamp )
+row format delimited
+fields terminated by ','
+tblproperties('skip.header.line.count'='1');
+```
