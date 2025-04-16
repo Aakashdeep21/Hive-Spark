@@ -19,7 +19,7 @@
 <p class="" data-start="287" data-end="303"><code data-start="287" data-end="303">customer_state</code></p>
 </li>
 </ul>
-<p>![alt text](https://www.notion.so/customers_dataset-1d54bdc4379180788dc9f67dca2391cd?pvs=4#1d64bdc4379180fb9ffbd133bb343ffb)</p>
+![Image](https://github.com/user-attachments/assets/4c7c9413-55d6-4f3d-9bf1-fe06825b5325)
 <p class="" data-start="305" data-end="364"><strong data-start="305" data-end="326">2. Orders Dataset</strong><br data-start="326" data-end="329" />This dataset consists of 8 columns:</p>
 <ul data-start="366" data-end="577">
 <li class="" data-start="366" data-end="380">
