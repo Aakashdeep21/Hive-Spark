@@ -19,6 +19,10 @@
 <p class="" data-start="287" data-end="303"><code data-start="287" data-end="303">customer_state</code></p>
 </li>
 </ul>
+
+![image1](https://github.com/user-attachments/assets/a8784c06-4cb1-4249-956b-143d24c12e24)
+
+
 <p class="" data-start="305" data-end="364"><strong data-start="305" data-end="326">2. Orders Dataset</strong><br data-start="326" data-end="329" />This dataset consists of 8 columns:</p>
 <ul data-start="366" data-end="577">
 <li class="" data-start="366" data-end="380">
