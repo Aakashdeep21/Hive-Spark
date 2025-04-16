@@ -1,7 +1,6 @@
 # Hive-Spark
 <p>In this project, we use <strong data-start="119" data-end="134">Apache Hive</strong> as the data warehousing solution and <strong data-start="172" data-end="188">Apache Spark</strong> as the data processing framework.</p>
 <p><strong>&nbsp;</strong></p>
-
 <p class="" data-start="131" data-end="189"><strong data-start="131" data-end="154">1. Customer Dataset</strong><br data-start="154" data-end="157" />This dataset contains 5 columns:</p>
 <ul data-start="191" data-end="303">
 <li class="" data-start="191" data-end="208">
