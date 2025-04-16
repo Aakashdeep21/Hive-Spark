@@ -54,3 +54,7 @@
 ![image](https://github.com/user-attachments/assets/776602b6-e372-49bf-8c2d-fd8a32555d4c)
 
 
+## Hive Tables
+<p>To begin with, we will create a dedicated database named <code data-start="320" data-end="332">hive_spark</code>. All subsequent tables will be created within this database.</p>
+<p>&nbsp;</p>
+
