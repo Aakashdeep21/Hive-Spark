@@ -62,9 +62,10 @@
 create database hive_spark;
  ```
 
-<p>"Now, we will create two Hive tables. The column structure of each table will mirror that of our source file."</p>
+<p>Now, we will create two Hive tables. The column structure of each table will mirror that of our source file.</p>
 
 <p>Hive DDL (Data Definition Language) command to create a <code data-start="82" data-end="92">customers</code> table.</p>
+
 ```sql
 create table hive_spark.customers(
 customer_id string,
@@ -76,7 +77,9 @@ row format delimited
 fields terminated by ','
 tblproperties('skip.header.line.count'='1');
 ```
-<p>Hive DDL (Data Definition Language) command to create a <span style="font-family: monospace;"><span style="background-color: #bfe6ff;">orders </span></span>table.</p>
+
+<p>Hive DDL (Data Definition Language) command to create a <code data-start="82" data-end="92">orders</code> table.</p>
+
 ```sql
 create table hive_spark.orders(
 order_id string,
