@@ -94,3 +94,47 @@ row format delimited
 fields terminated by ','
 tblproperties('skip.header.line.count'='1');
 ```
+<p>Now, load the data into the Hive tables from your source path using <code data-start="82" data-end="92">LOAD DATA</code> command. The source can be either an edge node directory or a location in HDFS.</p>
+
+```sql
+load data local inpath '<edge_node_path>/customers_dataset.csv' into table hive_spark.customers;
+```
+
+```sql
+ load data local inpath '<edge_node_path/orders_dataset.csv' into table hive_spark.orders;
+```
+### Parquet Hive Tables
+
+<p>Spark performs significantly better with splittable file formats such as Parquet. Therefore, we will create separate Hive tables using the Parquet file format. This not only improves query performance but also helps with efficient serialization, thereby reducing the overall storage footprint of the tables.</p>
+
+```sql
+create table hive_spark.customers_pq(
+customer_id string,
+customer_unique_id string,
+customer_zip_code_prefix string,
+customer_city string,
+customer_state string)
+stored as parquet;
+```
+
+```sql
+create table hive_spark.orders_pq(
+order_id string,
+customer_id string,
+order_status string,
+order_purchase_timestamp timestamp,
+order_approved_at timestamp,
+order_delivered_carrier_date timestamp,
+order_delivered_customer_date timestamp,
+order_estimated_delivery_date timestamp )
+stored as parquet;
+```
+<p>The columns in the Parquet tables will remain the same as the original Hive tables. However, instead of loading data directly from the source files, we will populate these Parquet tables by loading data from the existing Hive tables using <code data-start="82" data-end="92">INSERT INTO</code> statement.</p>
+
+```sql
+insert into table hive_spark.customers_pq select * from hive_spark.customers;
+```
+
+```sql
+insert into table hive_spark.orders_pq select * from hive_spark.orders;
+```
