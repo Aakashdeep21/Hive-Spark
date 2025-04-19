@@ -141,3 +141,34 @@ insert into table hive_spark.orders_pq select * from hive_spark.orders;
 ```
 <h2>Phase Two: Reading from Parquet Hive Tables in Spark</h2>
 <p>Use Spark to read the data from these Parquet tables as the source for downstream processing.</p>
+<p><strong>Import necessary libraries.</strong></p>
+
+```sql
+from pyspark.sql import SparkSession
+from pyspark import SparkContext
+from pyspark.sql.functions import *
+```
+
+<p><strong data-start="491" data-end="523"><code data-start="493" data-end="504">SparkConf</code> / <code data-start="507" data-end="521">SparkContext</code></strong> &ndash; for low‑level configuration.</p>
+<p><strong data-start="576" data-end="594"><code data-start="578" data-end="592">SparkSession</code></strong> &ndash; entry point for DataFrame/Hive support</p>
+<p><strong data-start="736" data-end="755"><code data-start="738" data-end="753">sql.functions</code></strong> &ndash; common column operations (filtering, casting, UDF‑style transforms).</p>
+
+
+<p><strong>Instantiate your SparkSession with Hive support.</strong></p>
+
+```sql
+spark = SparkSession.builder.appName("<app_name_of_your_choice>").enableHiveSupport().getOrCreate()
+```
+
+<ul>
+<li class="" data-start="427" data-end="467">
+<p class="" data-start="429" data-end="467"><strong data-start="429" data-end="448"><code data-start="431" data-end="446">.appName(...)</code></strong>: Names your job.</p>
+</li>
+<li class="" data-start="468" data-end="550">
+<p class="" data-start="470" data-end="550"><strong data-start="470" data-end="496"><code data-start="472" data-end="494">.enableHiveSupport()</code></strong>: Hooks into Hive&rsquo;s metastore for CREATE/USE/INSERT.</p>
+</li>
+<li class="" data-start="551" data-end="631">
+<p class="" data-start="553" data-end="631"><strong data-start="553" data-end="580">Optional <code data-start="564" data-end="578">.config(...)</code></strong>: Tune shuffle partitions or Hive warehouse path.</p>
+</li>
+</ul>
+You can also use spark.sql("USE hive_spark") to switch to your database and start reading/writing tables.
