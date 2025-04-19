@@ -1,6 +1,7 @@
 # Hive-Spark
 <p>In this project, we use <strong data-start="119" data-end="134">Apache Hive</strong> as the data warehousing solution and <strong data-start="172" data-end="188">Apache Spark</strong> as the data processing framework.</p>
 <p><strong>&nbsp;</strong></p>
+<h2>Phase One: Preparing the Data for Spark</h2>
 <p class="" data-start="131" data-end="189"><strong data-start="131" data-end="154">1. Customer Dataset</strong><br data-start="154" data-end="157" />This dataset contains 5 columns:</p>
 <ul data-start="191" data-end="303">
 <li class="" data-start="191" data-end="208">
@@ -138,3 +139,5 @@ insert into table hive_spark.customers_pq select * from hive_spark.customers;
 ```sql
 insert into table hive_spark.orders_pq select * from hive_spark.orders;
 ```
+<h2>Phase Two: Reading from Parquet Hive Tables in Spark</h2>
+<p>Use Spark to read the data from these Parquet tables as the source for downstream processing.</p>
